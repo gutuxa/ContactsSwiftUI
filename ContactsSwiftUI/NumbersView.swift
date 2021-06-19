@@ -13,13 +13,11 @@ struct NumbersView: View {
     var body: some View {
         List {
             ForEach(contacts) { contact in
-                Section(
-                    header: Text(contact.fullname)
-                        .textCase(nil)
-                ) {
+                Section(header: Text(contact.fullname)) {
                     DetailRowView(text: contact.email, icon: "tray")
                     DetailRowView(text: contact.phone, icon: "phone")
                 }
+                .textCase(.none)
             }
         }
             .navigationTitle("Numbers List")

@@ -11,7 +11,7 @@ struct ListView: View {
     let contacts: [Contact]
     
     var body: some View {
-        List(contacts, id: \.self) { contact in
+        List(contacts) { contact in
             NavigationLink(
                 contact.fullname,
                 destination: ContactDetailsView(contact: contact)

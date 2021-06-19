@@ -23,6 +23,6 @@ struct DetailRowView: View {
 
 struct DetailRowView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailRowView(text: Contact.getContact().email, icon: "tray")
+        DetailRowView(text: Contact.getContacts().first!.email, icon: "tray")
     }
 }

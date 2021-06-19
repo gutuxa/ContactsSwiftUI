@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StartView: View {
-    let contacts = Contact.getContacts()
+    private let contacts = Contact.getContacts()
     
     var body: some View {
         TabView {

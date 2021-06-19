@@ -7,7 +7,8 @@
 
 import Foundation
 
-class Contact: NSObject, Identifiable {
+struct Contact: Identifiable {
+    let id = UUID()
     let firstname: String
     let lastname: String
     let email: String
@@ -15,13 +16,6 @@ class Contact: NSObject, Identifiable {
     
     var fullname: String {
         "\(firstname) \(lastname)"
-    }
-    
-    init(firstname: String, lastname: String, email: String, phone: String) {
-        self.firstname = firstname
-        self.lastname = lastname
-        self.email = email
-        self.phone = phone
     }
 }
 
@@ -48,14 +42,5 @@ extension Contact {
         }
         
         return contacts
-    }
-    
-    static func getContact() -> Contact {
-        Contact(
-            firstname: DataManager.shared.firstNames.randomElement() ?? "",
-            lastname: DataManager.shared.lastNames.randomElement() ?? "",
-            email: DataManager.shared.emails.randomElement() ?? "",
-            phone: DataManager.shared.phones.randomElement() ?? ""
-        )
     }
 }
